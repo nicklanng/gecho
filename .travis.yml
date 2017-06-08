@@ -1,17 +1,15 @@
 language: go
-
 go:
-  - 1.8
-
+- 1.8
 script:
-  - GOARCH=amd64 GOOS=linux go build -o bin/gecho-linux-amd64
-  - GOARCH=amd64 GOOS=darwin go build -o bin/gecho-darwin-amd64
-  - GOARCH=amd64 GOOS=windows go build -o bin/gecho-windows-amd64
+- GOARCH=amd64 GOOS=linux go build -o bin/gecho-linux-amd64
+- GOARCH=amd64 GOOS=darwin go build -o bin/gecho-darwin-amd64
+- GOARCH=amd64 GOOS=windows go build -o bin/gecho-windows-amd64
 
 deploy:
   provider: releases
   api_key:
-      secure: kMqcA+p7qi+HFRtkhh0rWM8HYCtHtAEB7TzVte1oX0b25iZKnZmP1Ba2T6HqYYFUx7f6DF1Igs78YpNypjNYAiteHsGq+6eGCoFyGsFZqrR75rye2WdOFOe1JggvnvH3tLK2jWS6hL+uD30VMmbkRZ2zL+GM74bEniMfPoFwNuKBthHbLMdR3Pca5mf39yOjhs0O0Kg7rcqzFXa0zpiZg+aNRhlNqUeVY0VjSmZ/iQxRDAfvt4FmwAmBwUAq68plS9AWTobIC63NbD+lgUOVWgifDDKrSCLIhxayc5ubJujcSMsYipqCrWV8BB5FASwEyG0w5RNgSlhU1Z+u2EEmdMtpl6boTmVz/WqVb82BG7Zu3i27vQkVGlmJd9uOIh+wrlwLT5SrTKOx7/ZzHEWM+Ted0fjMQGFTKhuyKTwrge2xeS41sx8wJKsRclfSkQMP9PrByXrSbG5Ke/wNmoC1ht0FfIMUsmn23G5t6ubSrpK4MJyAGWtUlHguqdbf4ldUTbCP7IPQr5Y9wSln7vgmtvblfh2U9Xnr/FKR1gt2A9ybMPSxeMO2CLjwnBmVt4fQDjSavydEaoigVpRC4rbt7trLgtPz6Eg/kA2jb/kaXDtQIzQrV9CIXNU+yArdtMqB55ZRqHZ6xXUn3TqgWjHLShL3Xx8B/ggEBLewlTiMZPQ=
+      secure: YGlhhnSlvk+Xhg7OO5K+kkjfRrlzpW+B3vNj6o9XgJk86xIX9rd7Swrlok2Urz6PQHHZtKCy1aHmVwyVoFi3tu8GhAnHjyzxELHOT24SGWM2zhjbmnM1kQ6hsXMmKBwGCcLBZ3AdZUMkUUy5cafJ+QfhalvqxWt/9hMD8nV547zGuMLc9IG/ONv4M31pPxeZnHiq35dgVciKgolb/8gNh/jdEUFgMb6Lnbvj/rC/uyQa/iBHDy9Knk2zccW1dgXgl0wzaO1fPSVvZKqrW/gV8JtQjsG8zlulixCsSL429vCl2QuHiVxCy1eLz6G6LqqNUSea/4k6YwSWAgGBbem/B4PUDhJhuwFiRyF/b+q16e3i2HBbxk2urog1yJWMsE7lyi85XaoShygllk9MgzxHFPyXCrHLbHizQjXpIP5cBgkYssmoiogD+qYt17itnnX2Bj3wEmwfdRQwkFtTnfS1m2BrJ1FYrB9fZKSb1c7uSne5uBQP7dL7Zjml20EgyIx6m8Pvhb8So+HYsl8RToSlzzlK92kZyIRjIpCF/sFOxP1s0RQbPCzlYy+Vzb3uqDSsA/6wUAogcOzL93fY37l0SxqlpDs/oM/VzUZXC9tIh9JSrSUYp+XWsOp7zTqbLV4NcgCLSeopmPLIZ3JcXAoo4qjqVMAPBDXQ2QtDQt4EENk=
   file:
     - "bin/gecho-linux-amd64"
     - "bin/gecho-darwin-amd64"
