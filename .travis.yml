@@ -7,3 +7,15 @@ script:
   - GOARCH=amd64 GOOS=linux go build -o bin/gecho-linux-amd64
   - GOARCH=amd64 GOOS=darwin go build -o bin/gecho-darwin-amd64
   - GOARCH=amd64 GOOS=windows go build -o bin/gecho-windows-amd64
+
+deploy:
+  provider: releases
+  api_key:
+      secure: "kMqcA+p7qi+HFRtkhh0rWM8HYCtHtAEB7TzVte1oX0b25iZKnZmP1Ba2T6HqYYFUx7f6DF1Igs78YpNypjNYAiteHsGq+6eGCoFyGsFZqrR75rye2WdOFOe1JggvnvH3tLK2jWS6hL+uD30VMmbkRZ2zL+GM74bEniMfPoFwNuKBthHbLMdR3Pca5mf39yOjhs0O0Kg7rcqzFXa0zpiZg+aNRhlNqUeVY0VjSmZ/iQxRDAfvt4FmwAmBwUAq68plS9AWTobIC63NbD+lgUOVWgifDDKrSCLIhxayc5ubJujcSMsYipqCrWV8BB5FASwEyG0w5RNgSlhU1Z+u2EEmdMtpl6boTmVz/WqVb82BG7Zu3i27vQkVGlmJd9uOIh+wrlwLT5SrTKOx7/ZzHEWM+Ted0fjMQGFTKhuyKTwrge2xeS41sx8wJKsRclfSkQMP9PrByXrSbG5Ke/wNmoC1ht0FfIMUsmn23G5t6ubSrpK4MJyAGWtUlHguqdbf4ldUTbCP7IPQr5Y9wSln7vgmtvblfh2U9Xnr/FKR1gt2A9ybMPSxeMO2CLjwnBmVt4fQDjSavydEaoigVpRC4rbt7trLgtPz6Eg/kA2jb/kaXDtQIzQrV9CIXNU+yArdtMqB55ZRqHZ6xXUn3TqgWjHLShL3Xx8B/ggEBLewlTiMZPQ="
+  file:
+    - "bin/gecho-linux-amd64"
+    - "bin/gecho-darwin-amd64"
+    - "bin/gecho-windows-amd64"
+  skip_cleanup: true
+  on:
+    tags: true
