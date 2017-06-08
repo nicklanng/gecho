@@ -32,6 +32,7 @@ func Handler(service string) func(http.ResponseWriter, *http.Request) {
 			log.Fatal(err)
 		}
 
+		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(statusCode)
 		w.Write(bytes)
 	}
