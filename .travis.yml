@@ -1,0 +1,17 @@
+language: go
+
+go:
+  - 1.8
+  - master
+
+env:
+  global:
+    - BUILD_GOARCH=amd64
+  matrix:
+    - BUILD_GOOS=linux
+    - BUILD_GOOS=darwin
+    - BUILD_GOOS=windows
+
+script:
+  - gvm cross $BUILD_GOOS $BUILD_GOARCH
+  - GOARCH=$BUILD_GOARCH GOOS=$BUILD_GOOS go build main.go -o bin/gecho-$BUILD_GOOS-$BUILD_GOARCH
