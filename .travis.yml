@@ -4,7 +4,7 @@ go:
 script:
 - GOARCH=amd64 GOOS=linux go build -o bin/gecho-linux-amd64
 - GOARCH=amd64 GOOS=darwin go build -o bin/gecho-darwin-amd64
-- GOARCH=amd64 GOOS=windows go build -o bin/gecho-windows-amd64
+- GOARCH=amd64 GOOS=windows go build -o bin/gecho-windows-amd64.exe
 
 deploy:
   provider: releases
@@ -13,7 +13,7 @@ deploy:
   file:
     - "bin/gecho-linux-amd64"
     - "bin/gecho-darwin-amd64"
-    - "bin/gecho-windows-amd64"
+    - "bin/gecho-windows-amd64.exe"
   skip_cleanup: true
   on:
     tags: true
