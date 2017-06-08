@@ -25,6 +25,7 @@ func Handler(service string) func(http.ResponseWriter, *http.Request) {
 		res.Origin = r.RemoteAddr
 		res.Host = r.Host
 		res.Body = string(body)
+		res.Args = r.URL.Query()
 
 		bytes, err := res.JSON()
 		if err != nil {
