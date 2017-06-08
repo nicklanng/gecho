@@ -24,6 +24,7 @@ $ curl localhost:8080/fdgdg  # 200 OK
 ```
 
 ### Command-line arguments
+You can see this from the command by launching it with the `-h` argument.
 ```sh
   -cert string
         The certificate for server SSL (default "server.crt")
