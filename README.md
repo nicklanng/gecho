@@ -5,7 +5,25 @@ A simple echo server, a la httpbin
 
 ## Usage
 
-Command-line arguments
+Launch the application, configuring options can be seen below.
+```sh
+$ ./gecho-linux-amd64 -service=test
+```
+
+Send a request to the endpoint. You get a response showing the details of the request, including headers, query parameters and url.
+```sh
+$ curl -X POST -i -H x-some-header:4535 "localhost:8080/418/other/things?cool=yes"
+{"service":"test","host":"localhost:8080","url":"/418/other/things?cool=yes","args":{"cool":["yes"]},"method":"POST","origin":"[::1]:63708","headers":{"Accept":["*/*"],"User-Agent":["Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US))"],"X-Some-Header":["4535"]},"body":""}
+```
+
+You can specify the response status code by including as the first path segment. Any unknown status code will be returned as 200 OK.
+```sh
+$ curl localhost:8080/201 # 201 Created
+$ curl localhost:8080/404 # 404 Not Found
+$ curl localhost:8080/fdgdg  # 200 OK
+```
+
+### Command-line arguments
 ```sh
   -cert string
         The certificate for server SSL (default "server.crt")
