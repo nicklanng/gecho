@@ -13,15 +13,15 @@ import (
 func main() {
 	service, certPath, keyPath, port, ssl := getConfig()
 
-	portString := strconv.Itoa(port)
+	listenAddress := ":" + strconv.Itoa(port)
 
 	http.HandleFunc("/", pkg.Handler(service))
-	fmt.Println("listening on :" + portString)
+	fmt.Println("listening on", listenAddress)
 
 	if ssl {
-		log.Fatal(http.ListenAndServeTLS(":"+portString, certPath, keyPath, nil))
+		log.Fatal(http.ListenAndServeTLS(listenAddress, certPath, keyPath, nil))
 	} else {
-		log.Fatal(http.ListenAndServe(":"+portString, nil))
+		log.Fatal(http.ListenAndServe(listenAddress, nil))
 	}
 }
 
