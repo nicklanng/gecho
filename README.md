@@ -3,6 +3,11 @@ A simple echo server, a la httpbin
 
 [![Build Status](https://travis-ci.org/nicklanng/gecho.svg?branch=master)](https://travis-ci.org/nicklanng/gecho)
 
+## Installation
+If you have go installed, simply run: `go get github.com/nicklanng/gecho`.
+
+Otherwise, click on the `releases` tab to find executables for Windows, Linux and OS X.
+
 ## Usage
 
 Launch the application, configuring options can be seen below.
