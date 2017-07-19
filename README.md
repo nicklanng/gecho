@@ -12,7 +12,7 @@ Otherwise, click on the `releases` tab to find executables for Windows, Linux an
 
 Launch the application, configuring options can be seen below.
 ```sh
-$ ./gecho-linux-amd64 -service=test
+$ gecho -service=test
 ```
 
 Send a request to the endpoint. You get a response showing the details of the request, including headers, query parameters and url.
